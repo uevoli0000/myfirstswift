@@ -46,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }catch{
             print(error)
         }
-        print("Hello")
+        print("Hello2222")
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
