@@ -9,10 +9,23 @@
 /* Begin PBXBuildFile section */
 		9F8BE498218C10F200339373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BE497218C10F200339373 /* AppDelegate.swift */; };
 		9F8BE49A218C10F200339373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BE499218C10F200339373 /* ViewController.swift */; };
-		9F8BE49D218C10F200339373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE49B218C10F200339373 /* Main.storyboard */; };
 		9F8BE49F218C10F400339373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE49E218C10F400339373 /* Assets.xcassets */; };
 		9F8BE4A2218C10F400339373 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE4A0218C10F400339373 /* LaunchScreen.storyboard */; };
+		9F8BE4A9218C121C00339373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE49B218C10F200339373 /* Main.storyboard */; };
+		9F8BE4AD21916E0B00339373 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE4AC21916E0B00339373 /* data.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		9F8BE4AE2191821800339373 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = image.png;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# copypng\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		9F8BE494218C10F200339373 /* MyFirstSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +35,7 @@
 		9F8BE49E218C10F400339373 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F8BE4A1218C10F400339373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F8BE4A3218C10F400339373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F8BE4AC21916E0B00339373 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 				9F8BE49E218C10F400339373 /* Assets.xcassets */,
 				9F8BE4A0218C10F400339373 /* LaunchScreen.storyboard */,
 				9F8BE4A3218C10F400339373 /* Info.plist */,
+				9F8BE4AC21916E0B00339373 /* data.json */,
 			);
 			path = MyFirstSwift;
 			sourceTree = "<group>";
@@ -76,6 +91,7 @@
 				9F8BE492218C10F200339373 /* Resources */,
 			);
 			buildRules = (
+				9F8BE4AE2191821800339373 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -122,9 +138,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8BE4A9218C121C00339373 /* Main.storyboard in Resources */,
 				9F8BE4A2218C10F400339373 /* LaunchScreen.storyboard in Resources */,
 				9F8BE49F218C10F400339373 /* Assets.xcassets in Resources */,
-				9F8BE49D218C10F200339373 /* Main.storyboard in Resources */,
+				9F8BE4AD21916E0B00339373 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +300,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5R766BQ73F;
 				INFOPLIST_FILE = MyFirstSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +319,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5R766BQ73F;
 				INFOPLIST_FILE = MyFirstSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
