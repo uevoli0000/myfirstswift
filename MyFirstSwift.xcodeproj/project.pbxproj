@@ -13,6 +13,8 @@
 		9F8BE4A2218C10F400339373 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE4A0218C10F400339373 /* LaunchScreen.storyboard */; };
 		9F8BE4A9218C121C00339373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE49B218C10F200339373 /* Main.storyboard */; };
 		9F8BE4AD21916E0B00339373 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE4AC21916E0B00339373 /* data.json */; };
+		9FBF098421969C8F00969473 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF098321969C8F00969473 /* Common.swift */; };
+		9FBF098621969CB200969473 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF098521969CB200969473 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -36,6 +38,8 @@
 		9F8BE4A1218C10F400339373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F8BE4A3218C10F400339373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8BE4AC21916E0B00339373 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		9FBF098321969C8F00969473 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		9FBF098521969CB200969473 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				9F8BE4A0218C10F400339373 /* LaunchScreen.storyboard */,
 				9F8BE4A3218C10F400339373 /* Info.plist */,
 				9F8BE4AC21916E0B00339373 /* data.json */,
+				9FBF098321969C8F00969473 /* Common.swift */,
+				9FBF098521969CB200969473 /* CustomCell.swift */,
 			);
 			path = MyFirstSwift;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F8BE49A218C10F200339373 /* ViewController.swift in Sources */,
+				9FBF098421969C8F00969473 /* Common.swift in Sources */,
+				9FBF098621969CB200969473 /* CustomCell.swift in Sources */,
 				9F8BE498218C10F200339373 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
