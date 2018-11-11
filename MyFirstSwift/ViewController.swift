@@ -16,7 +16,7 @@ struct DetailJSON : Decodable {
     let name:String
     let desc:String
 }
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var datalist = [DataJSON]()
@@ -48,6 +48,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }catch{
             print(error)
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -103,6 +112,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as! CustomCell
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteButton = UIContextualAction(style: .normal, title: "삭제", handler: {(action, view, nil) in
+            print("Delete")
+        })
+        
+        deleteButton.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        deleteButton.image = UIImage(named: "trash2.gif")
+        
+        return UISwipeActionsConfiguration(actions: [deleteButton])
     }
     
 //    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
