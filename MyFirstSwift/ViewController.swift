@@ -121,7 +121,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         deleteButton.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         deleteButton.image = UIImage(named: "trash2.gif")
-        
+        //
         return UISwipeActionsConfiguration(actions: [deleteButton])
     }
     
