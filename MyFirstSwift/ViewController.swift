@@ -76,7 +76,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func tableAddClick(_ sender: Any) {
-        tableRowCount += 1
+        //tableRowCount += 1
         customCell.append(CustomCell())
         print("tableRowCount : \(tableRowCount)")
         tableView.reloadData()
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         print("테이블 행 갯수 : \(tableView.numberOfRows(inSection: 0))")
         for i in 0..<tableView.numberOfRows(inSection: 0) {
             let cell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! CustomCell
-            print("\(i) : name=\(cell.nameTextField.text ?? "")")
+            print("\(i) : name=\(cell.nameLabel.text ?? "")")
         }
     }
     @IBAction func fileSaveClick(_ sender: Any) {
@@ -94,18 +94,98 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("numberOfRowsInSection : \(tableRowCount)")
-        return tableRowCount
+        print("numberOfRowsInSection : \(customCell.count)")
+        return customCell.count
     }
     
-    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    /**
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            self.customCell.remove(at: indexPath.row)
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.tableView.endUpdates()
+        }
+    }
+ **/
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("cellForRowAt :: \(indexPath.row)")
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as! CustomCell
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        print("editActionsForRowAt : index\(indexPath.row)")
-//    }
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        /**
+        if indexPath != nil {
+            guard let cell:CustomCell = tableView.cellForRow(at: indexPath!) as? CustomCell else {
+                print("nothing cell...1")
+                return
+            }
+            print("didEndEditingRowAt :: \(indexPath!.row) : name=\(cell.nameTextField.text ?? "")")
+        } else {
+            print("nothing cell...2")
+        }
+ **/
+        //tableView.reloadData()
+    }
+    /*
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
+            //print("before customCell Array: \(self.customCell.count)")
+            //tableView.beginUpdates()
+            
+            print("delete row : \(indexPath.row)")
+            self.customCell.remove(at :indexPath.row)
+            //print("after customCell Array: \(self.customCell.count)")
+            
+            /**
+            var tempStr = ""
+
+            for i in 0..<tableView.numberOfRows(inSection: 0) {
+                let cell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! CustomCell
+                tempStr += " \(cell.nameTextField.text ?? " ")"
+            }
+ **/
+            //print("\(tempStr)")
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.none)
+            //tableView.endUpdates()
+            //tableView.reloadData()
+            //
+        }
+        deleteAction.backgroundColor = .red
+        let image = UIGraphicsImageRenderer(size: CGSize(width: 30, height: 30)).image { _ in
+            UIImage(named:"51032.gif")?.draw(in: CGRect(x: 0, y: 0, width: 30, height: 30))
+        }
+        deleteAction.image = image
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
+    }**/
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "❌\n Delete") { (action, indexPath) in
+            // delete item at indexPath
+            self.customCell.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            //print(self.tableArray)
+        }
+        
+        delete.backgroundColor = .red
+        //delete.backgroundColor = UIColor(patternImage: UIImage(named:"51032.gif")!)
+        
+        let share = UITableViewRowAction(style: .default, title: "Share") { (action, indexPath) in
+            // share item at indexPath
+            print("I want to share: ")
+        }
+        
+        share.backgroundColor = UIColor.lightGray
+        
+        return [delete, share]
+    }
 }

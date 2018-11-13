@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F4E567C219AB0EF00A79D28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E567B219AB0EF00A79D28 /* DetailViewController.swift */; };
+		9F88BDE82199569A00176F5D /* 51032.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9F88BDE72199569A00176F5D /* 51032.gif */; };
 		9F8BE498218C10F200339373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BE497218C10F200339373 /* AppDelegate.swift */; };
 		9F8BE49A218C10F200339373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BE499218C10F200339373 /* ViewController.swift */; };
 		9F8BE49F218C10F400339373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BE49E218C10F400339373 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		9F4E567B219AB0EF00A79D28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9F88BDE72199569A00176F5D /* 51032.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 51032.gif; sourceTree = "<group>"; };
 		9F8BE494218C10F200339373 /* MyFirstSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8BE497218C10F200339373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8BE499218C10F200339373 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +76,10 @@
 		9F8BE496218C10F200339373 /* MyFirstSwift */ = {
 			isa = PBXGroup;
 			children = (
+				9F88BDE72199569A00176F5D /* 51032.gif */,
 				9F8BE497218C10F200339373 /* AppDelegate.swift */,
 				9F8BE499218C10F200339373 /* ViewController.swift */,
+				9F4E567B219AB0EF00A79D28 /* DetailViewController.swift */,
 				9F8BE49B218C10F200339373 /* Main.storyboard */,
 				9F8BE49E218C10F400339373 /* Assets.xcassets */,
 				9F8BE4A0218C10F400339373 /* LaunchScreen.storyboard */,
@@ -147,6 +153,7 @@
 				9F8BE4A9218C121C00339373 /* Main.storyboard in Resources */,
 				9F8BE4A2218C10F400339373 /* LaunchScreen.storyboard in Resources */,
 				9F8BE49F218C10F400339373 /* Assets.xcassets in Resources */,
+				9F88BDE82199569A00176F5D /* 51032.gif in Resources */,
 				9F8BE4AD21916E0B00339373 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +167,7 @@
 			files = (
 				9F8BE49A218C10F200339373 /* ViewController.swift in Sources */,
 				9FBF098421969C8F00969473 /* Common.swift in Sources */,
+				9F4E567C219AB0EF00A79D28 /* DetailViewController.swift in Sources */,
 				9FBF098621969CB200969473 /* CustomCell.swift in Sources */,
 				9F8BE498218C10F200339373 /* AppDelegate.swift in Sources */,
 			);
